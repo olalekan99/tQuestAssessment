@@ -1,6 +1,6 @@
 console.log("Lakes");
 /*
-i) Write an if statement that checks if a variable age is greater than or equal to 18. If true, print "You are an adult."
+i) Write an if statement that checks if a variable age is greater than or equal to 18. If true, print "You are an adult while adding some other parameters."
 ii) Write an if statement that checks if a variable number is positive. If true, print "The number is positive." Otherwise, print "The number is not positive."
 iii) Write an if statement that checks if a variable fruit is equal to "apple". If true, print "It's an apple." If false, print "It's not an apple."
 iv) Write a program that iterates over an array of numbers and prints "Even" if the number is even, and "Odd" if the number is odd.
@@ -8,10 +8,16 @@ iv) Write a program that iterates over an array of numbers and prints "Even" if 
 v) json placeholder: https://jsonplaceholder.typicode.com/users
 */
 
-// i) Using the If Statement
-let age = 25;
-if (age >= 18) {
-    console.log("You are an adult")
+// i) Using the Else If Statement
+let age = 30;
+if (age >= 80) {
+    console.log("You are way too old")
+}else if(age >= 50){
+  console.log("You are getting old")
+}else if(age >= 18){
+  console.log("You are an adult")
+}else{
+  console.log("You are a child")
 };
 
 // ii) Using if else Statement
@@ -30,18 +36,19 @@ let number = -1
         console.log("It's not an apple.");
     };
 
-    // iv) using for loop iterate over an array
-    let oddArr = [];
-    let evenArr = [];
+    // iv) using for loop to iterate over an array
+    let numArr = [];
+    // let oddArr = [];
+    // let evenArr = [];
     for (let i = 1; i <= 1000; i++) {
+      numArr.push(i);
+
          if(i % 2 === 0){
-        evenArr.push(i);
+       console.log(`${i} is even`);
     }else{
-        oddArr.push(i)
+       console.log(`${i} is odd`);
     }
    };
-   console.log(oddArr);
-   console.log(evenArr);
 
     // v) Using data from https://jsonplaceholder.typicode.com/users
     const usersInfo = [
@@ -276,21 +283,19 @@ let number = -1
     }
   }
 ];
-let username = [];
-let userStreet = [];
+const username = [];
+const userStreet = [];
 // console.log(usersInfo.length);
 
-// Retrieving usernames Data
 for (let i = 0; i < usersInfo.length; i++) {
-   username.push(usersInfo[i].name);
-   console.log(username[i]);   
+  const info = usersInfo[i];
+  // Retrieving usernames Data
+  username.push(info.name);
+  // Retrieving userStreet Data
+  userStreet.push(info.address.street)   
 }
+console.log(username);
+console.log(userStreet);
 
-// Retrieving userStreet Data
-for (let i = 0; i < usersInfo.length; i++) {
-    userStreet.push(usersInfo[i].address.street);
-    console.log(userStreet[i]);
-    
-}
     
     
